@@ -9,8 +9,9 @@
             </div>
             <div v-if="showMenu" class="absolute bottom-10 left-4 bg-gray-200 text-black p-2 shadow">
                 <div v-for="site in sites" :key="site.title" @click="open(site)"
-                    class="cursor-pointer hover:bg-blue-100 px-2 py-1">
-                    🖥 {{ site.title }}
+                   class="cursor-pointer hover:bg-blue-100 px-2 py-1 flex items-center space-x-2">
+                    <div v-html="getRandomCuteIcon()"></div>
+                    <div>{{ site.title }}</div>
                 </div>
             </div>
             <!-- <div class="flex items-center space-x-2"> -->
@@ -37,6 +38,15 @@
 const emit = defineEmits(['openSite', 'openChat'])
 const isBlinking = ref(false)
 
+const cuteIcons = [
+  '💖', '🎀', '🧸', '🌸', '✨', '🦋', '💅', '🍒',
+  '<img src="/gifs/y2k1.gif" class="inline w-4 h-4" />',
+  '<img src="/gifs/y2k2.gif" class="inline w-4 h-4" />',
+  '<img src="/gifs/y2k3.gif" class="inline w-4 h-4" />',
+  '<img src="/gifs/y2k4.gif" class="inline w-4 h-4" />'
+]
+
+
 const props = defineProps({
     blinkChat: Boolean,
 })
@@ -45,6 +55,11 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const currentTime = ref(new Date().toLocaleTimeString());
 let timer;
+
+function getRandomCuteIcon() {
+  return cuteIcons[Math.floor(Math.random() * cuteIcons.length)]
+}
+
 
 onMounted(() => {
   timer = setInterval(() => {
@@ -80,7 +95,7 @@ const showMenu = ref(false)
 const sites = [
     { title: 'https://www.palazzoeventi.com/', url: 'https://www.palazzoeventi.com/' },
     { title: 'https://www.henhouselondon.co.uk/', url: 'https://www.henhouselondon.co.uk/' },
-    { title: 'https://www.andcoshop.com/', url: 'https://www.andcoshop.com/' },
+    { title: 'https://www.andcoshop.com/', url: 'https://www.andcoshop.com/hometemp' },
     { title: 'meganpoem.vercel.app', url: 'meganpoem.vercel.app' },
     { title: 'https://www.alwaproduction.co.uk/', url: 'https://www.alwaproduction.co.uk/' },
     { title: 'https://tasc-ten.vercel.app/', url: 'https://tasc-ten.vercel.app/' },

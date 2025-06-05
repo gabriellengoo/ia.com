@@ -1,7 +1,10 @@
 <template>
     <!-- <div class="h-screen w-screen bg-[#0078D7] relative" > -->
-    <div class="relative h-screen w-screen bg-cover bg-center overflow-hidden"
-        style="background-image: url('/icons/msnlogo.png')">
+    <!-- <div class="relative h-screen w-screen bg-cover bg-center overflow-hidden"
+        style="background-image: url('/icons/msnlogo.png')"> -->
+        <!-- /gifs/bg.jpg /gifs/y2k1.gif-->
+        <div class="relative h-screen w-screen bg-cover bg-center overflow-hidden"
+        style="background-image: url('/gifs/bg.jpg')">
         <MsnWindow v-for="(window, i) in openWindows" :key="i" :title="window.title" :url="window.url"
             :visible="window.visible" @close="closeWindow(i)" />
 

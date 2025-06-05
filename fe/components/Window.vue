@@ -4,9 +4,9 @@
       :style="{ top: `${position.y}px`, left: `${position.x}px`, width: `${width}px`, height: `${height}px`, zIndex: zIndex }"
       @mousedown="bringToFront"
     >
-      <!-- Window Header -->
+      <!-- Window Header bg-[#000080]-->
       <div
-        class="flex items-center justify-between bg-[#000080] text-white px-2 py-1 cursor-move"
+        class="flex items-center justify-between bg-[#dd7daf] text-white px-2 py-1 cursor-move"
         @mousedown.prevent="startDrag"
       >
       <div class="flex items-center">

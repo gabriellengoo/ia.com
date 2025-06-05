@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: 'MS Sans Serif';
-  src: url('~/assets/fonts/ms-sans-serif-1.otf') format('opentype');
+  src: url('~/assets/css/fonts/ms-sans-serif-1.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Retro';
-  src: url('~/assets/fonts/retro.ttf') format('ttf');
+  src: url('~/assets/css/fonts/retro.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'PX Sans Nouveaux';
-  src: url('~/assets/fonts/px_sans_nouveaux.woff2') format('woff2');
+  src: url('~/assets/css/fonts/px_sans_nouveaux.woff2') format('woff2');
   /* src: url('https://fonts.gstatic.com/s/pxsansnouveaux/v1/pxsn-4x7b2
 3
 4-2x7b23-2x7b23-2x7b23-2x7b23.woff2') format('woff2'); */
@@ -38,8 +38,70 @@
   background: #c0c0c000;
 }
 
+.sparkle-container{
+   top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.sparkle {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  /* top: 0; */
+  /* left: 0; */
+  opacity: 0;
+  animation: toss 2s ease-in-out infinite;
+}
+
+.sparkle-top-left {
+  top: 0;
+  left: 0;
+  animation-delay: 0s;
+}
+
+.sparkle-top-right {
+  top: 0;
+  right: 0;
+  animation-delay: 0.3s;
+}
+
+.sparkle-bottom-left {
+  bottom: 0;
+  left: 0;
+  animation-delay: 0.6s;
+}
+
+.sparkle-bottom-right {
+  bottom: 0;
+  right: 0;
+  animation-delay: 0.9s;
+}
+
+@keyframes toss {
+  0% {
+    transform: translate(0, 0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-20px, -40px) scale(1.2) rotate(30deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50px, -80px) scale(0.8) rotate(60deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+
 .taskbar-3d {
-  background: linear-gradient(to top, #0a246a, #3a6ea5); /* XP blue gradient */
+  background: linear-gradient(to top, #cf398c, #ff95df); /* XP blue gradient */
   border-top: 2px solid #ffffff63;
   border-left: 2px solid #ffffff3e;
   border-right: 2px solid #404040;
@@ -85,18 +147,19 @@
 body {
   font-family: 'MS Sans Serif', sans-serif;
   /* font-family: 'Retro'; */
-  font-family: Tahoma;
+  /* font-family: Tahoma; */
   /* font-family: 'PX Sans Nouveaux'; */
     margin: 0;
+    font-size: small;
     cursor: url('/curs.cur') 16 16, auto;
     /* font-family: Arial, sans-serif; */
     background-color: #000000;
   }
   
-  body {
+  /* body {
     -webkit-text-stroke: 0.2px black; 
     color: white; 
-  }
+  } */
 /* 
   body {
     color: white; 
