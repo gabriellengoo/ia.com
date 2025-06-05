@@ -5,7 +5,7 @@
             <div class="start-button flex bg-green-600 mr-2 rounded-r-[10px] items-center cursor-pointer hover:bg-green-700 transition duration-300"
                 @click="toggleStart">
                 <img src="/icons/msn-logo.webp" class="w-5 h-5 ml-2" />
-                <button class=" px-2 py-1 ">Work</button>
+                <button class=" px-2 py-1 ">View Sites</button>
             </div>
             <div v-if="showMenu" class="absolute bottom-10 left-4 bg-gray-200 text-black p-2 shadow">
                 <div v-for="site in sites" :key="site.title" @click="open(site)"
