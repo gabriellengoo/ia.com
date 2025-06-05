@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: ['~/assets/css/main.css'],
-  
+   
   vite: {
     plugins: [
       tailwindcss(),
@@ -20,8 +20,16 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/content',
+    '@nuxtjs/google-fonts',
     '@nuxt/eslint'
   ],
+
+  googleFonts: {
+    families: {
+      Tahoma: true,
+    },
+    display: 'swap',
+  },
 
   sanity: {
     projectId: 'bxv8ug21',
